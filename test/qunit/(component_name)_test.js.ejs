@@ -1,0 +1,21 @@
+steal(
+    "funcunit/qunit",
+    function() {
+    	var $fixture = null,
+            $div = null,
+            repeat = {
+                setup: function() {
+                    $fixture = $('#qunit-fixture');
+                    $fixture.append('<div></div>');
+                },
+                teardown: function() {
+                    $div = null;
+                }
+            };
+
+        module('<%= component_name %>', repeat);
+        test('can be instantiated', function() {
+            ok($fixture.components_<%= component_name %>());
+        });
+    }
+);

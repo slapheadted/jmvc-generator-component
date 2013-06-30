@@ -1,0 +1,7 @@
+// load('<%= path %>/scripts/crawl.js')
+
+load('steal/rhino/rhino.js')
+
+steal('steal/html/crawl', function(){
+  steal.html.crawl("<%= path %>/<%= component_name %>.html","<%= path %>/out")
+});

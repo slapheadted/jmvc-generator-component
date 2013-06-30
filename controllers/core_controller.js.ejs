@@ -1,0 +1,12 @@
+$.Controller('Components.<%= component_name.charAt(0).toUpperCase() + component_name.slice(1) %>',
+{
+
+}, {
+    init: function() {
+        this.render();
+    },
+
+    render: function() {
+        this.element.html(this.view('core.ejs'));
+    }
+});

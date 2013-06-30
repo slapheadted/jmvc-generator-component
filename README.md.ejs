@@ -1,0 +1,57 @@
+jmvc-component-<%= component_name %>
+===============================
+
+A component to facilitate various things for JMVC 3.2.4.
+
+## Overview
+Appends a div to something and then scrolls something else.
+
+## Getting Started
+### Quick-start
+##### Controller
+    $('#someElement').components_<%= component_name %>({
+        person: {
+            name: 'Chris',
+            age: 25
+        }
+    });
+
+##### Some button
+    'button.dostuff click': function(el, ev) {
+        this.find('.components_<%= component_name %>').trigger('<%= component_name %>.dostuff');
+    }
+
+#### Markup
+    <button class="btn dostuff">OK</button>
+
+#### CSS
+    .dostuff {
+        /* some CSS */
+    }
+
+## Parameters
+The component takes an object literal as its only parameter.
+### Required
+#### person.name (default: 'John')
+    Type: String
+Person's name.
+#### person.age
+    Type: Integer
+Person's age.
+### Optional
+#### person.gender (default: 'female')
+    Type: String
+Person's gender.
+
+## Events
+###  Emitted
+- '<%= component_name %>.dostuff' - does stuff.
+
+### Listeners
+- '<%= component_name %>.toggleVisiblity' - shows/hides component.
+
+## Additional Info
+- This component is test driven. If you make any modifications to this component please test drive carefully!
+
+### Suggestions & Questions
+[put your email addess here]
